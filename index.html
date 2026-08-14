@@ -7,11 +7,10 @@
 <title>NEXORA MANHWA</title>
 
 <style>
-
 *{
+    box-sizing:border-box;
     margin:0;
     padding:0;
-    box-sizing:border-box;
 }
 
 body{
@@ -21,17 +20,14 @@ body{
 }
 
 header{
-    background:#111118;
-    border-bottom:1px solid #292934;
-    padding:20px;
-    position:sticky;
-    top:0;
-    z-index:10;
+    padding:28px 18px 22px;
+    background:#101017;
+    border-bottom:1px solid #292933;
 }
 
 .logo{
-    font-size:27px;
-    font-weight:800;
+    font-size:32px;
+    font-weight:900;
     letter-spacing:1px;
 }
 
@@ -40,13 +36,14 @@ header{
 }
 
 .search{
+    margin-top:22px;
     width:100%;
-    margin-top:18px;
-    padding:15px 18px;
-    border-radius:12px;
-    border:1px solid #30303b;
-    background:#19191f;
+    height:55px;
+    border:1px solid #363642;
+    border-radius:16px;
+    background:#1a1a22;
     color:white;
+    padding:0 18px;
     font-size:16px;
     outline:none;
 }
@@ -55,70 +52,42 @@ header{
     border-color:#8b5cf6;
 }
 
-nav{
-    display:flex;
-    gap:10px;
-    overflow-x:auto;
-    margin-top:16px;
-}
-
-nav button{
-    white-space:nowrap;
-    padding:9px 15px;
-    border-radius:20px;
-    border:1px solid #30303b;
-    background:#19191f;
-    color:#bbb;
-}
-
-nav button:first-child{
-    background:#8b5cf6;
-    color:white;
-    border-color:#8b5cf6;
-}
-
-main{
-    padding:25px 20px 50px;
+.container{
     max-width:1100px;
     margin:auto;
-}
-
-.hero{
-    padding:25px 0 30px;
+    padding:32px 18px;
 }
 
 .hero h1{
-    font-size:32px;
+    font-size:34px;
     margin-bottom:10px;
 }
 
 .hero p{
-    color:#9696a3;
-    font-size:16px;
+    color:#9999a8;
+    font-size:18px;
     line-height:1.5;
 }
 
-.section{
-    margin-top:25px;
-}
-
 .section-title{
-    font-size:22px;
-    margin-bottom:16px;
+    margin-top:38px;
+    margin-bottom:20px;
+    font-size:26px;
 }
 
 .grid{
     display:grid;
     grid-template-columns:repeat(2,1fr);
-    gap:15px;
+    gap:16px;
 }
 
 .card{
-    background:#14141b;
-    border:1px solid #292934;
-    border-radius:14px;
+    background:#171720;
+    border:1px solid #2c2c38;
+    border-radius:18px;
     overflow:hidden;
     transition:.2s;
+    cursor:pointer;
 }
 
 .card:hover{
@@ -127,258 +96,221 @@ main{
 }
 
 .cover{
-    height:240px;
-    background:linear-gradient(145deg,#29283a,#111117);
+    width:100%;
+    aspect-ratio:2/3;
+    background:linear-gradient(145deg,#272735,#121219);
     display:flex;
     align-items:center;
     justify-content:center;
-    color:#777786;
+    color:#777787;
+    font-size:17px;
+}
+
+.card-info{
+    padding:16px;
+}
+
+.card-title{
+    font-size:18px;
+    font-weight:bold;
+    margin-bottom:8px;
+}
+
+.card-meta{
+    color:#8e8e9d;
     font-size:14px;
-}
-
-.info{
-    padding:14px;
-}
-
-.info h3{
-    font-size:16px;
-    margin-bottom:7px;
-}
-
-.info p{
-    color:#858592;
-    font-size:13px;
 }
 
 .badge{
     display:inline-block;
-    margin-top:9px;
-    padding:5px 8px;
-    border-radius:6px;
-    background:#272235;
-    color:#b58cff;
-    font-size:11px;
+    margin-top:10px;
+    padding:5px 9px;
+    border-radius:8px;
+    background:#29213d;
+    color:#a879ff;
+    font-size:12px;
+}
+
+.empty{
+    margin-top:25px;
+    padding:30px;
+    text-align:center;
+    color:#777787;
+    border:1px dashed #30303b;
+    border-radius:15px;
 }
 
 footer{
     text-align:center;
-    padding:30px 20px;
-    border-top:1px solid #22222c;
-    color:#666673;
-    font-size:13px;
+    padding:45px 20px;
+    color:#666674;
+    margin-top:35px;
 }
 
-@media(min-width:700px){
-
-    .grid{
-        grid-template-columns:repeat(4,1fr);
-    }
-
-    .cover{
-        height:300px;
+@media(max-width:600px){
+    .logo{
+        font-size:29px;
     }
 
     .hero h1{
-        font-size:42px;
+        font-size:30px;
     }
 
+    .grid{
+        grid-template-columns:repeat(2,1fr);
+    }
 }
 
+@media(min-width:800px){
+    .grid{
+        grid-template-columns:repeat(4,1fr);
+    }
+}
 </style>
 </head>
 
 <body>
 
 <header>
+    <div class="logo">
+        NEXORA <span>MANHWA</span>
+    </div>
 
-<div class="logo">
-NEXORA <span>MANHWA</span>
-</div>
-
-<input
-class="search"
-type="search"
-placeholder="🔎  Pesquisar manhwa..."
->
-
-<nav>
-
-<button>Todos</button>
-<button>Ação</button>
-<button>Aventura</button>
-<button>Romance</button>
-<button>Fantasia</button>
-<button>Drama</button>
-<button>Comédia</button>
-
-</nav>
-
+    <input
+        id="search"
+        class="search"
+        type="text"
+        placeholder="🔎 Pesquisar manhwa..."
+    >
 </header>
 
-
-<main>
-
-<section class="hero">
-
-<h1>Seu universo de histórias.</h1>
-
-<p>
-Leia seus manhwas, mangás e HQs favoritos
-em um só lugar.
-</p>
-
-</section>
-
-
-<section class="section">
-
-<h2 class="section-title">
-🔥 Em destaque
-</h2>
-
-<div class="grid">
-
-<div class="card">
-
-<div class="cover">
-CAPA
-</div>
-
-<div class="info">
-
-<h3>Em breve</h3>
-
-<p>0 capítulos</p>
-
-<span class="badge">
-Em lançamento
-</span>
-
-</div>
-
-</div>
-
-
-<div class="card">
-
-<div class="cover">
-CAPA
-</div>
-
-<div class="info">
-
-<h3>Em breve</h3>
-
-<p>0 capítulos</p>
-
-<span class="badge">
-Em lançamento
-</span>
-
-</div>
-
-</div>
-
-
-<div class="card">
-
-<div class="cover">
-CAPA
-</div>
-
-<div class="info">
-
-<h3>Em breve</h3>
-
-<p>0 capítulos</p>
-
-<span class="badge">
-Em lançamento
-</span>
-
-</div>
-
-</div>
-
-
-<div class="card">
-
-<div class="cover">
-CAPA
-</div>
-
-<div class="info">
-
-<h3>Em breve</h3>
-
-<p>0 capítulos</p>
-
-<span class="badge">
-Em lançamento
-</span>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<section class="section">
-
-<h2 class="section-title">
-🆕 Atualizados recentemente
-</h2>
-
-<div class="grid">
-
-<div class="card">
-
-<div class="cover">
-CAPA
-</div>
-
-<div class="info">
-
-<h3>Em breve</h3>
-
-<p>Novo capítulo</p>
-
-</div>
-
-</div>
-
-
-<div class="card">
-
-<div class="cover">
-CAPA
-</div>
-
-<div class="info">
-
-<h3>Em breve</h3>
-
-<p>Novo capítulo</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
+<main class="container">
+
+    <section class="hero">
+        <h1>Seu universo de histórias.</h1>
+        <p>
+            Leia seus manhwas favoritos em um só lugar.
+        </p>
+    </section>
+
+    <h2 class="section-title">🔥 Em destaque</h2>
+
+    <section class="grid" id="catalogo">
+
+        <article class="card" data-name="Solo Leveling">
+            <div class="cover">CAPA</div>
+
+            <div class="card-info">
+                <div class="card-title">
+                    Solo Leveling
+                </div>
+
+                <div class="card-meta">
+                    0 capítulos
+                </div>
+
+                <div class="badge">
+                    Em breve
+                </div>
+            </div>
+        </article>
+
+        <article class="card" data-name="The Beginning After The End">
+            <div class="cover">CAPA</div>
+
+            <div class="card-info">
+                <div class="card-title">
+                    The Beginning After The End
+                </div>
+
+                <div class="card-meta">
+                    0 capítulos
+                </div>
+
+                <div class="badge">
+                    Em breve
+                </div>
+            </div>
+        </article>
+
+        <article class="card" data-name="Omniscient Reader">
+            <div class="cover">CAPA</div>
+
+            <div class="card-info">
+                <div class="card-title">
+                    Omniscient Reader
+                </div>
+
+                <div class="card-meta">
+                    0 capítulos
+                </div>
+
+                <div class="badge">
+                    Em breve
+                </div>
+            </div>
+        </article>
+
+        <article class="card" data-name="Nexora Original">
+            <div class="cover">NEXORA</div>
+
+            <div class="card-info">
+                <div class="card-title">
+                    Nexora Original
+                </div>
+
+                <div class="card-meta">
+                    0 capítulos
+                </div>
+
+                <div class="badge">
+                    Original
+                </div>
+            </div>
+        </article>
+
+    </section>
+
+    <div id="nenhum" class="empty" style="display:none;">
+        Nenhum manhwa encontrado.
+    </div>
 
 </main>
 
-
 <footer>
-
-© 2026 NEXORA MANHWA
-
+    © 2026 NEXORA MANHWA
 </footer>
+
+<script>
+
+const search = document.getElementById("search");
+const cards = document.querySelectorAll(".card");
+const nenhum = document.getElementById("nenhum");
+
+search.addEventListener("input", function(){
+
+    const texto = search.value.toLowerCase().trim();
+    let encontrados = 0;
+
+    cards.forEach(card => {
+
+        const nome = card.dataset.name.toLowerCase();
+
+        if(nome.includes(texto)){
+            card.style.display = "";
+            encontrados++;
+        }else{
+            card.style.display = "none";
+        }
+
+    });
+
+    nenhum.style.display =
+        encontrados === 0 ? "block" : "none";
+
+});
+
+</script>
 
 </body>
 </html>
